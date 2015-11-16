@@ -28,7 +28,7 @@
     "requirejs": "^2.1.20"
   },
   "scripts": {
-    "postinstall": "bower cache clean && bower install && gulp"
+    "postinstall": "bower cache clean && bower install && gulp && node server.js"
   },
   "engines" : { 
     "npm": "3.3.9",
