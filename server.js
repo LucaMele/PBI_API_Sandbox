@@ -1,17 +1,6 @@
-var http = require('http');
-var express = require('express');
-var bodyParser = require('body-parser');
-
-var app = express();
-
-app.use(express.static(__dirname + '/public'));
-
-
-app.use(bodyParser.urlencoded());
-app.use(bodyParser.json());
-
-
-
-
-
-http.createServer(app).listen(80);
+var http = require('http')
+var port = 1337;
+http.createServer(function(req, res) {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Hello World\n');
+}).listen(port);
