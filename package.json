@@ -1,0 +1,33 @@
+{
+  "name": "pbi_api_sandbox",
+  "version": "1.0.0",
+  "description": "a sandbpx for pbi api",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucaMele/PBI_API_Sandbox.git"
+  },
+  "keywords": [
+    "pbi",
+    "api"
+  ],
+  "author": "Luca Mele, Jason Dunbar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LucaMele/PBI_API_Sandbox/issues"
+  },
+  "homepage": "https://github.com/LucaMele/PBI_API_Sandbox#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "bower": "^1.6.5",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-template-compile": "^1.1.0",
+    "requirejs": "^2.1.20"
+  },
+  "scripts": {
+    "postinstall": "bower cache clean && bower install && gulp"
+  }
+}
