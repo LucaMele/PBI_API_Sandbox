@@ -2,7 +2,7 @@
   "name": "pbi_api_sandbox",
   "version": "1.0.0",
   "description": "a sandbpx for pbi api",
-  "main": "server.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LucaMele/PBI_API_Sandbox.git"
@@ -29,8 +29,7 @@
     "requirejs": "^2.1.20"
   },
   "scripts": {
-    "postinstall": "bower cache clean && bower install && gulp",
-    "publish": "node server.js"
+    "postinstall": "bower cache clean && bower install && gulp"
   },
   "engines": {
     "npm": "3.3.9",
