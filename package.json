@@ -29,5 +29,9 @@
   },
   "scripts": {
     "postinstall": "bower cache clean && bower install && gulp"
+  },
+  "engines" : { 
+    "npm": "~3.4.0",
+    "node": "~0.10.25"
   }
 }
