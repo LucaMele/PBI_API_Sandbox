@@ -6,11 +6,11 @@ require.config({
         'main'
     ],
     paths : {
-        backbone: 'bower_components/backbone/backbone',
-        app: 'modules/app',
-        jquery: 'bower_components/jquery/dist/jquery',
-        underscore: 'bower_components/underscore/underscore',
-        marionette: 'bower_components/backbone.marionette/lib/backbone.marionette',
+        backbone: 'lib/backbone/backbone',
+        app: '../modules/app',
+        jquery: 'lib/jquery/dist/jquery',
+        underscore: 'lib/underscore/underscore',
+        marionette: 'lib/backbone.marionette/lib/backbone.marionette',
     },
     shim : {
         Backbone: {

@@ -7,8 +7,7 @@ define([
     'marionette',
     'underscore',
     'app',
-    'modules/storage/index',
-    'adal'
+    'modules/storage/index'
 ], function (Backbone, Marionette, _, App, Storage, Adal) {
 
     "use strict";

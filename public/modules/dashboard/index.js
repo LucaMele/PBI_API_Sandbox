@@ -2,7 +2,7 @@
  * Created by lmele on 26.10.2015.
  */
 
-define(['backbone', 'marionette', 'underscore','app'], function (Backbone, Marionette, _, App) {
+define(['backbone', 'marionette', 'underscore', 'app'], function (Backbone, Marionette, _, App) {
 
     "use strict";
 

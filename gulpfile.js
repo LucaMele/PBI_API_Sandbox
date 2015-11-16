@@ -7,18 +7,18 @@ var gulp = require('gulp'),
     clean = require('gulp-clean');
 
 gulp.task('jst', ['clean'], function () {
-    gulp.src('templates/**/*.html')
+    gulp.src('./public/templates/**/*.html')
         .pipe(template())
         .pipe(concat('templates.js'))
-        .pipe(gulp.dest('./templates'));
+        .pipe(gulp.dest('./public/templates'));
 });
 
 gulp.task('clean', function () {
-    return gulp.src('./templates/templates.js', {read: false})
+    return gulp.src('./public/templates/templates.js', {read: false})
         .pipe(clean({force: true}));
 });
 
 gulp.task('default', ['jst']);
 gulp.task('dev', ['jst'], function() {
-	gulp.watch('templates/**/*.html', ['jst']);
+	gulp.watch('public/templates/**/*.html', ['jst']);
 });
