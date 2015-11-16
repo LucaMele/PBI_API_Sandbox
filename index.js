@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 
 
-
+app.use("/", require('./routes/ajax.js'));
 
 
 http.createServer(app).listen(3000);

@@ -25,7 +25,7 @@
     "gulp-concat": "^2.6.0",
     "gulp-rimraf": "^0.2.0",
     "gulp-template-compile": "^1.1.0",
-    "http": "0.0.0",
+    "passport-azure-oauth": "0.0.6",
     "requirejs": "^2.1.20"
   },
   "scripts": {

@@ -14,25 +14,15 @@ define([
 
     var Login = App.module('Login');
 
-    var CPRS_PROXY = 'http://localhost:3000/?auth=';
-
-    Login.token = Backbone.Model.extend({
-        initialize: function() {
-
-        },
-        urlRoot: CPRS_PROXY + 'https://login.windows.net/common/oauth2/authorize',
-        defaults: {
-            auth: null
-        }
-    });
+    var CLIENT_ID = 'd5757c3d-32b5-419c-b770-3d81560005a8';
 
     Login.Controller = Marionette.Controller.extend({
         initialize: function() {
             this.apiReqCode = 'https://login.windows.net/common/oauth2/authorize' +
                 '?response_type=code'+
-                '&client_id=d5757c3d-32b5-419c-b770-3d81560005a8'+
+                '&client_id='+ CLIENT_ID +
                 '&resource=https://analysis.windows.net/powerbi/api'+
-                '&redirect_uri= '+ window.location.href;
+                '&redirect_uri= '+ window.location.href + '/token';
         },
         index: function() {
             if (Storage.getObject('code')) {
@@ -46,7 +36,6 @@ define([
                 !~window.location.href.indexOf('&session_state')) {
                 this.setupView();
                 this.openWindow(this.apiReqCode);
-                this.timedCheck();
             }
             App.major.show(new this.loginView());
         },
@@ -64,10 +53,7 @@ define([
                 }
             });
         },
-        grantAccess: function(code) {
-
-
-
+        /*grantAccess: function(code) {
             this.token = new Login.token({
                 grant_type: 'authorization_code',
                 client_id: 'd5757c3d-32b5-419c-b770-3d81560005a8',
@@ -79,28 +65,7 @@ define([
 
 
             // App.trigger('api:login', Storage.getObject('auth'));
-        },
-        timedCheck: function() {
-            var self = this,
-                code, auth;
-            var pollTimer =  window.setInterval(function() {
-                try{
-                    if (~self.loginWindow.location.href.indexOf('&session_state')) {
-                        self.loginWindow.close();
-                        window.clearInterval(pollTimer);
-                        console.log('ddddd');
-                        code = self.getParameterByName(self.loginWindow.location.href, 'code');
-                        Storage.setObject('code', code);
-                        self.grantAccess(code);
-                    }
-                } catch (e) {
-
-                }
-            }, 100);
-        },
-        getParameterByName: function (urLocation, name) {
-            return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(urLocation)||[,""])[1].replace(/\+/g, '%20'))||null
-        },
+        },*/
         openWindow: function (req) {
             this.loginWindow = window.open(
                 req,
