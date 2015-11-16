@@ -4,7 +4,7 @@
 var gulp = require('gulp'),
     template = require('gulp-template-compile'),
     concat  = require('gulp-concat'),
-    clean = require('gulp-clean');
+    rimraf = require('gulp-rimraf');
 
 gulp.task('jst', ['clean'], function () {
     gulp.src('./public/templates/**/*.html')
@@ -15,7 +15,7 @@ gulp.task('jst', ['clean'], function () {
 
 gulp.task('clean', function () {
     return gulp.src('./public/templates/templates.js', {read: false})
-        .pipe(clean({force: true}));
+        .pipe(rimraf({ force: true }));
 });
 
 gulp.task('default', ['jst']);
